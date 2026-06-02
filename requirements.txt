@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+python-multipart
+streamlit
+pandas
+langgraph
+langchain
+langchain-groq
+langchain-community
+sqlalchemy
+python-dotenv

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-SQL Agent</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗄️ Text-to-SQL Agent</h1>
+            <p>Query your database using natural language</p>
+        </header>
+
+        <!-- Connection Panel -->
+        <div id="connection-panel" class="panel">
+            <h2>Connect to Database</h2>
+            <div class="connection-methods">
+                <button class="method-btn active" data-method="url">Database URL</button>
+                <button class="method-btn" data-method="upload">Upload File</button>
+            </div>
+
+            <div id="url-method" class="method-content">
+                <input type="text" id="db-url" placeholder="postgresql://user:password@host:port/database">
+                <button onclick="connectDatabase()">Connect</button>
+            </div>
+
+            <div id="upload-method" class="method-content hidden">
+                <input type="file" id="db-file" accept=".db,.sqlite">
+                <button onclick="uploadDatabase()">Upload</button>
+            </div>
+        </div>
+
+        <!-- Schema Panel -->
+        <div id="schema-panel" class="panel hidden">
+            <div class="panel-header">
+                <h2>Database Schema</h2>
+                <button onclick="toggleSchema()">Toggle</button>
+            </div>
+            <pre id="schema-content"></pre>
+        </div>
+
+        <!-- Chat Panel -->
+        <div id="chat-panel" class="panel hidden">
+            <div class="panel-header">
+                <h2>Chat</h2>
+                <button onclick="resetConversation()">Reset</button>
+            </div>
+            <div id="chat-messages" class="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" id="user-query" placeholder="Ask a question about your data..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
