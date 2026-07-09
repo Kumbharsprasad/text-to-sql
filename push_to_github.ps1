@@ -3,7 +3,7 @@
 # It will prompt for confirmation before committing and pushing.
 
 param(
-    [string]$RepoUrl = "https://github.com/prasadk2304/Text-To-SQL.git",
+    [string]$RepoUrl = "https://github.com/Kumbharsprasad/text-to-sql",
     [string]$Branch = "main",
     [switch]$DryRun
 )
